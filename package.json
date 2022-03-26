@@ -1,0 +1,24 @@
+{
+  "name": "programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamdhruv/programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamdhruv/programming/issues"
+  },
+  "homepage": "https://github.com/iamdhruv/programming#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.7",
+    "jest": "^27.5.1"
+  }
+}

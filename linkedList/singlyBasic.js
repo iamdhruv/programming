@@ -45,9 +45,6 @@ LinkedList.prototype.insertItemAtStart = function(data) {
 
 LinkedList.prototype.insertItemInMiddle = function(data, index) {
     if(this.head === null) {
-        if(index === 0) {
-            this.insertItemAtStart(data);
-        }
         return;
     }
     let newItem = new LinkedListItem(data);
@@ -102,19 +99,26 @@ LinkedList.prototype.deleteFromMiddle = function(index) {
     current.next = null;
 }
 
+LinkedList.prototype.reverse = function() {
+    if(this.head === null) {
+        return;
+    }
+
+    let previous = null;
+    let current = this.head;
+    let next = this.head.next;
+
+    while(next !== null) {
+        current.next = previous;
+        previous = current;
+        current = next;
+        next = next.next;
+    }
+    current.next = previous;
+    this.head = current;
+}
+
 export {
     LinkedList,
     LinkedListItem
 };
-
-// const LL = new LinkedList();
-// LL.insertItemAtEnd(2);
-// LL.insertItemAtEnd(3);
-// LL.insertItemAtEnd(5);
-// LL.insertItemAtEnd(6);
-// LL.insertItemAtStart(1);
-// LL.insertItemInMiddle(4, 3);
-// LL.deleteFromStart();
-// LL.deleteFromEnd();
-// LL.deleteFromMiddle(2);
-// LL.traverse();
